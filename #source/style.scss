@@ -306,18 +306,17 @@ body {
 }
 
 .page {
-
-    // .page__hero
-
     &__hero {}
 
     &__focused {}
+
+    &__love {}
 }
 
 // ==================================================================== Hero =======================================================
 .hero {
     @include adaptive-value("padding-top", 65, 30);
-    @include adaptive-value("padding-bottom", 143, 30);
+    @include adaptive-value("padding-bottom", 100, 30);
 
     // .hero__container
 
@@ -701,4 +700,180 @@ body {
         bottom: percent(60, 530);
     }
 
+}
+
+// ==================================================================== Love =======================================================
+
+.love {
+    background-color: #C5CEBD;
+
+    // .love__content
+
+    &__content {
+        max-width: rem(1440);
+        margin: 0 auto;
+        display: flex;
+        align-items: start;
+
+        @media (max-width: em(991.98)) {
+            flex-direction: column;
+            align-items: center;
+            padding-inline: rem(15);
+        }
+    }
+
+    // .love__picture
+
+    &__picture {
+        position: relative;
+        flex: 0 1 percent(558, 1440);
+
+        //anim
+        opacity: 0;
+        transition: all 1s ease 0s;
+
+        &._watcher-view {
+            opacity: 1;
+        }
+    }
+
+    // .love__image
+
+    &__image {
+        border-radius: rem(5);
+        max-width: 100%;
+        position: relative;
+        z-index: 2;
+    }
+
+    // .love__picture-decor
+
+    &__picture-decor {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        aspect-ratio: 223 / 234;
+        max-width: rem(223);
+        transform: translate(percent(120, 223), 61.5%);
+    }
+
+    &__picture-decor-item {
+        width: 100%;
+        height: 100%;
+    }
+
+    // .love__body
+
+    &__body {
+        flex: 1 1 percent(402, 1440);
+        position: relative;
+        z-index: 4;
+
+        @include adaptive-value("padding-top", 160, 100);
+    }
+
+    // .love__title
+
+    &__title {
+        @include adaptive-value("font-size", 60, 36);
+        line-height: percent(66, 60);
+        font-family: $secondFont;
+        letter-spacing: rem(-2.5);
+        text-align: center;
+
+        &:not(:last-child) {
+            @include adaptive-value("margin-bottom", 42, 20);
+        }
+
+        @media (min-width: em(991.98)) {
+            margin-left: rem(-65);
+        }
+
+
+        //anim
+        opacity: 0;
+        transition: all 1s ease 0s;
+
+        &._watcher-view {
+            opacity: 1;
+        }
+    }
+
+    // .love__text
+
+    &__text {
+        @media (min-width: em(991.98)) {
+            padding-left: rem(56);
+        }
+
+        //anim
+        opacity: 0;
+        transition: all 1s ease 0s;
+
+        &._watcher-view {
+            opacity: 1;
+        }
+    }
+
+    // .love__decor
+
+    &__decor {
+        flex: 0 1 percent(390, 1440);
+    }
+}
+
+.decor-love {
+    @include adaptive-value("padding-top", 235, 0);
+
+
+    // .decor-love__line-item
+    &__body {
+        position: relative;
+        //anim
+        opacity: 0;
+        transition: all 1.5s ease 0s;
+
+        &._watcher-view {
+            opacity: 1;
+        }
+    }
+
+    &__line-item {
+        position: absolute;
+        left: 0;
+        top: 0;
+        aspect-ratio: 525 / 531;
+        max-width: rem(525);
+        width: percent(525, 390);
+    }
+
+    // .decor-love__line
+
+    &__line {
+        width: 100%;
+        height: 100%;
+
+    }
+
+    // .decor-love__hair
+
+    &__hair {
+        max-width: 100%;
+        border-radius: 50%;
+    }
+
+    &__hair-item {
+        transform: translate(50%, 0);
+    }
+
+    &__dryer-item {
+        transform: translate(0, percent(-95, 400));
+    }
+
+    // .decor-love__dryer
+
+    &__dryer {
+        max-width: 100%;
+        border-radius: rem(5);
+    }
 }
